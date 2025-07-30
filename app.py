@@ -1,10 +1,12 @@
 import utils.screenController as screenC
-import controllers.estadistica as mainCon
+import controllers.menuCon as mainCon
 from tabulate import tabulate
+import utils.corefiles as corefiles
 
 
 def menu():
     while True:
+        screenC.limpiar_pantalla()
         menu = [
             [1, "Añadir un Nuevo Elemento"],
             [2, "Ver Todos los Elementos"],
@@ -30,27 +32,27 @@ def menu():
 
         match opcion:
             case 1:
-
-                pass 
+                mainCon.opcion_1()
             case 2:
-                pass 
+                mainCon.opcion_2()
             case 3:
-                pass  
+                mainCon.opcion_3()
             case 4:
-                pass 
+                mainCon.opcion_4() 
             case 5:
-                pass 
+                mainCon.opcion_5() 
             case 6:
-                pass  
+                mainCon.opcion_6()  
             case 7:
-                pass  
+                mainCon.opcion_7()  
             case 8:
                 print("Saliendo del programa...")
                 screenC.limpiar_pantalla()
                 break
             case _:
                 print("Opción no válida. Intenta de nuevo.")
-                screenC.pausar_pantalla()  
+                screenC.pausar_pantalla() 
+                return menu()
 
 if __name__ == "__main__":
     menu()
