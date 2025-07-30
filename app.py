@@ -28,6 +28,7 @@ def menu():
             opcion = int(input("Selecciona una opción (1-8): "))
         except ValueError:
             print("Por favor, ingresa un número válido.")
+            screenC.pausar_pantalla()
             continue
 
         match opcion:

@@ -1,6 +1,7 @@
 from tabulate import tabulate
 from app import menu
 from utils.screenController import limpiar_pantalla, pausar_pantalla
+from controllers.librosCon import add_new_libro 
 
 
 def opcion_1():
@@ -27,7 +28,7 @@ def opcion_1():
 
     match opcion:
         case 1:
-            pass
+            add_new_libro()
         case 2:
             pass
         case 3:
