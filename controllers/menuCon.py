@@ -1,7 +1,7 @@
 from tabulate import tabulate
-from app import menu
-from utils.screenController import limpiar_pantalla, pausar_pantalla
-from controllers.librosCon import add_new_libro 
+from utils.screenController import limpiar_pantalla, pausar_pantalla 
+from controllers.coleccionMan import cargar_coleccion_por_id
+from app import menu, arrancar_programa
 
 
 def opcion_1():
@@ -28,7 +28,7 @@ def opcion_1():
 
     match opcion:
         case 1:
-            add_new_libro()
+            pass
         case 2:
             pass
         case 3:
@@ -251,7 +251,7 @@ def opcion_7():
         case 1:
             pass
         case 2:
-            pass
+            cargar_coleccion_por_id()
         case 3:
             return menu()
         case _:
