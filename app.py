@@ -32,9 +32,13 @@ def arrancar_programa():
             coll.cargar_coleccion(coleccion_id)
         else:
             print("No se encontró ninguna colección guardada.")
+            screenC.pausar_pantalla()
+            screenC.limpiar_pantalla()
             return arrancar_programa()
     else:
         print("Opción no válida. Intenta de nuevo.")
+        screenC.pausar_pantalla()
+        screenC.limpiar_pantalla()
         return arrancar_programa()
 
     screenC.limpiar_pantalla()
@@ -43,6 +47,7 @@ def arrancar_programa():
 
 def menu():
     while True:
+        screenC.limpiar_pantalla()
         menu = [
             [1, "Añadir un Nuevo Elemento"],
             [2, "Ver Todos los Elementos"],

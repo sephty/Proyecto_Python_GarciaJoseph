@@ -1,23 +1,28 @@
 [
     {
-        "id": "5347",
-        "nombre": "joseph",
-        "libros": [],
-        "peliculas": [],
-        "musica": []
-    },
-    {
-        "id": "8608",
-        "nombre": "",
-        "libros": [],
-        "peliculas": [],
-        "musica": []
-    },
-    {
-        "id": "2794",
-        "nombre": "jose",
-        "libros": [],
-        "peliculas": [],
-        "musica": []
+      "id": "9999",
+      "nombre": "Colección de Medios de Prueba",
+      "libros": [
+        "libro-001",
+        "libro-002",
+        "libro-003",
+        "libro-004",
+        "libro-005"
+      ],
+      "peliculas": [
+        "pelicula-001",
+        "pelicula-002",
+        "pelicula-003",
+        "pelicula-004",
+        "pelicula-005"
+      ],
+      "musica": [
+        "musica-001",
+        "musica-002",
+        "musica-003",
+        "musica-004",
+        "musica-005"
+      ]
     }
-]
+  ]
+  
