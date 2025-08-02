@@ -1,0 +1,42 @@
+[
+    {
+        "id": "pelicula-001",
+        "titulo": "Inception",
+        "director": "Christopher Nolan",
+        "genero": "Ciencia Ficción",
+        "anio": 2010,
+        "valoracion": 5
+    },
+    {
+        "id": "pelicula-002",
+        "titulo": "The Matrix",
+        "director": "The Wachowskis",
+        "genero": "Acción, Ciencia Ficción",
+        "anio": 1999,
+        "valoracion": 5
+    },
+    {
+        "id": "pelicula-003",
+        "titulo": "The Godfather",
+        "director": "Francis Ford Coppola",
+        "genero": "Crimen, Drama",
+        "anio": 1972,
+        "valoracion": 5
+    },
+    {
+        "id": "pelicula-004",
+        "titulo": "The Dark Knight",
+        "director": "Christopher Nolan",
+        "genero": "Accion, Crimen, Drama",
+        "anio": 2008,
+        "valoracion": 5
+    },
+    {
+        "id": "pelicula-005",
+        "titulo": "Pulp Fiction",
+        "director": "Quentin Tarantino",
+        "genero": "Crimen, Drama",
+        "anio": 1994,
+        "valoracion": 5
+    }
+]

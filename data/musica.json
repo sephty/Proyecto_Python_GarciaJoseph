@@ -1,0 +1,42 @@
+[
+    {
+        "id": "musica-001",
+        "titulo": "Bohemian Rhapsody",
+        "artista": "Queen",
+        "genero": "Rock",
+        "anio": 1975,
+        "valoracion": 5
+    },
+    {
+        "id": "musica-002",
+        "titulo": "Imagine",
+        "artista": "John Lennon",
+        "genero": "Rock",
+        "anio": 1971,
+        "valoracion": 4
+    },
+    {
+        "id": "musica-003",
+        "titulo": "Smells Like Teen Spirit",
+        "artista": "Nirvana",
+        "genero": "Grunge",
+        "anio": 1991,
+        "valoracion": 5
+    },
+    {
+        "id": "musica-004",
+        "titulo": "Billie Jean",
+        "artista": "Michael Jackson",
+        "genero": "Pop",
+        "anio": 1982,
+        "valoracion": 5
+    },
+    {
+        "id": "musica-005",
+        "titulo": "Hotel California",
+        "artista": "Eagles",
+        "genero": "Rock",
+        "anio": 1976,
+        "valoracion": 5
+    }
+]
