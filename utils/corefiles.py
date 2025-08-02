@@ -1,61 +1,51 @@
 import json
 import os
-from typing import Dict, List, Optional, Union
+from typing import Dict, List, Union
 
 def read_json(path: str) -> Union[Dict, List]:
     try:
         with open(path, "r", encoding="utf-8") as file:
             return json.load(file)
     except (FileNotFoundError, json.JSONDecodeError):
-        return {} if path.endswith(".json") else []
-    
+        return []  
+    except Exception as e:
+        raise RuntimeError(f"Error al leer el archivo: {e}")
+
 def write_json(path: str, data: Union[Dict, List]) -> None:
-    with open(path, "w", encoding="utf-8") as file:
-        json.dump(data, file, indent=4)
-    
-def update_json(path: str, new_data: Dict, keys: Optional[List[str]] = None) -> None:
-    data = read_json(path)
-    
-    if not isinstance(data, dict):
-        raise ValueError("solo se puede actualizar archivos .JSON")
-    
-    if not keys:
-        data.update(new_data)
-    else:
-        current = data
-        for key in keys[:-1]:
-            current = current.setdefault(key, {})
-        current.setdefault(keys[-1], {}).update(new_data)
-    write_json(path, data)
+    try:
+        with open(path, "w", encoding="utf-8") as file:
+            json.dump(data, file, indent=4, ensure_ascii=False)
+    except Exception as e:
+        raise RuntimeError(f"Error al escribir en el archivo: {e}")
 
-def delete_json_key(path: str, keys: List[str]) -> bool:
-    data = read_json(path)
-    if not data:
-        return False
+def initialize_json(path: str) -> None:
+    if not os.path.exists(path):
+        initial_structure = []  
+        write_json(path, initial_structure)  
 
-    current = data
-    for key in keys[:-1]:
-        if key not in current:
-            return False
-        current = current[key]
+def clone_json(path: str) -> Union[Dict, List]:
+    try:
+        return read_json(path) 
+    except Exception as e:
+        raise RuntimeError(f"Error al clonar el archivo: {e}")
 
-    if keys[-1] in current:
-        del current[keys[-1]]
-        write_json(path, data)
-        return True
+def initialize_coleccion(path: str = 'data/coleccion.json') -> None:
+    if not os.path.exists(path):
+        from utils.id_gen import generar_id_coleccion
+        coleccion = [{
+            "id": generar_id_coleccion(path),
+            "nombre": "Mi Colección"
+        }]
+        write_json(path, coleccion)
 
-    return False
-
-def initialize_json(path: str, initial_structure: Union[Dict, List]) -> None:
-    if not os.path.isfile(path):
-        write_json(path, initial_structure)
-    else:
-        current_data = read_json(path)
-        if isinstance(current_data, dict) and isinstance(initial_structure, dict):
-            for key, value in initial_structure.items():
-                if key not in current_data:
-                    current_data[key] = value
-            write_json(path, current_data)
-    
-
-    
+def cargar_ultima() -> str:
+    try:
+        ultima_coleccion_id = read_json("data/ultima_coleccion.json")
+        if ultima_coleccion_id:
+            return ultima_coleccion_id
+        else:
+            print("No hay ID de colección guardado previamente.")
+            return None
+    except Exception as e:
+        print(f"Error al leer el archivo de la última colección: {e}")
+        return None

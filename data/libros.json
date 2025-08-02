@@ -1,0 +1,38 @@
+[
+    {
+      "id": "libro-001",
+      "titulo": "El Quijote",
+      "autor": "Miguel de Cervantes",
+      "genero": "Aventura",
+      "valoracion": 5
+    },
+    {
+      "id": "libro-002",
+      "titulo": "Cien Años de Soledad",
+      "autor": "Gabriel García Márquez",
+      "genero": "Realismo Magico",
+      "valoracion": 4
+    },
+    {
+      "id": "libro-003",
+      "titulo": "1984",
+      "autor": "George Orwell",
+      "genero": "Distopia",
+      "valoracion": 5
+    },
+    {
+      "id": "libro-004",
+      "titulo": "Orgullo y Prejuicio",
+      "autor": "Jane Austen",
+      "genero": "Romantico",
+      "valoracion": 4
+    },
+    {
+      "id": "libro-005",
+      "titulo": "Fahrenheit 451",
+      "autor": "Ray Bradbury",
+      "genero": "Ciencia Ficcion",
+      "valoracion": 4
+    }
+  ]
+  
