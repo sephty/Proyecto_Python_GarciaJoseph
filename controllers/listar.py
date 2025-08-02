@@ -20,11 +20,10 @@ def buscar_por_genero(tipo: str):
 
 
 def buscar_elemento(tipo: str, campo: str, valor: str):
-    # Ensure that 'valor' is lower case to make the search case-insensitive
     valor = valor.lower()
     resultados = []
     
-    # Search in libros (books)
+
     if tipo == "libros":
         for libro in elementos_temporales.get("libros", []):
             if campo == "titulo" and valor in libro["titulo"].lower():
@@ -34,7 +33,6 @@ def buscar_elemento(tipo: str, campo: str, valor: str):
             elif campo == "genero" and valor in libro["genero"].lower():
                 resultados.append(libro)
 
-    # Search in peliculas (movies)
     elif tipo == "peliculas":
         for pelicula in elementos_temporales.get("peliculas", []):
             if campo == "titulo" and valor in pelicula["titulo"].lower():
@@ -44,7 +42,6 @@ def buscar_elemento(tipo: str, campo: str, valor: str):
             elif campo == "genero" and valor in pelicula["genero"].lower():
                 resultados.append(pelicula)
 
-    # Search in musica (music)
     elif tipo == "musica":
         for musica in elementos_temporales.get("musica", []):
             if campo == "titulo" and valor in musica["titulo"].lower():
