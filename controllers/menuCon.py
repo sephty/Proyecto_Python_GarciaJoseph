@@ -5,6 +5,7 @@ import controllers.coleccionMan as colMan
 import controllers.editar as edit
 import controllers.anadir as add
 import controllers.listar as search
+import controllers.eliminar as delete
 from utils.temporal_data import elementos_temporales
 
 
@@ -102,44 +103,6 @@ def opcion_2():
             pausar_pantalla()
             return opcion_2()
 
-def buscar_elemento(tipo: str, campo: str, valor: str):
-    # Ensure that 'valor' is lower case to make the search case-insensitive
-    valor = valor.lower()
-    resultados = []
-    
-    # Search in libros (books)
-    if tipo == "libros":
-        for libro in elementos_temporales.get("libros", []):
-            if campo == "titulo" and valor in libro["titulo"].lower():
-                resultados.append(libro)
-            elif campo == "autor" and valor in libro["autor"].lower():
-                resultados.append(libro)
-            elif campo == "genero" and valor in libro["genero"].lower():
-                resultados.append(libro)
-
-    # Search in peliculas (movies)
-    elif tipo == "peliculas":
-        for pelicula in elementos_temporales.get("peliculas", []):
-            if campo == "titulo" and valor in pelicula["titulo"].lower():
-                resultados.append(pelicula)
-            elif campo == "director" and valor in pelicula["director"].lower():
-                resultados.append(pelicula)
-            elif campo == "genero" and valor in pelicula["genero"].lower():
-                resultados.append(pelicula)
-
-    # Search in musica (music)
-    elif tipo == "musica":
-        for musica in elementos_temporales.get("musica", []):
-            if campo == "titulo" and valor in musica["titulo"].lower():
-                resultados.append(musica)
-            elif campo == "artista" and valor in musica["artista"].lower():
-                resultados.append(musica)
-            elif campo == "genero" and valor in musica["genero"].lower():
-                resultados.append(musica)
-
-    return resultados
-
-
 def opcion_4():
     limpiar_pantalla()
     print("=" * 43)
@@ -227,9 +190,11 @@ def opcion_5():
 
     match opcion:
         case 1:
-            pass
+            delete.eliminar_por_titulo()
+            return opcion_5()
         case 2:
-            pass
+            delete.eliminar_por_id()
+            return opcion_5()
         case 3:
             return menu()
         case _:

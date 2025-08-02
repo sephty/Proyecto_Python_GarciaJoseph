@@ -1,3 +1,9 @@
+"""
+hecho por: Joseph Guilliani Garcia Jimenez
+fecha: 30/07/2025
+programa: Gestion de coleccion de media
+"""
+
 import utils.screenController as screenC
 import controllers.menuCon as mainCon
 from tabulate import tabulate
